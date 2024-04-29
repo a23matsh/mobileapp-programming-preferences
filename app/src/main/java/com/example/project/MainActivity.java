@@ -1,6 +1,9 @@
 package com.example.project;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -13,6 +16,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-    }
 
+        Button buttonToStartSecondActivity = findViewById(R.id.buttonToStartSecondActivity);
+        buttonToStartSecondActivity.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View secondview) {
+                Intent intent = new Intent(MainActivity.this, second_activity.class);
+                startActivity(intent);
+
+            }
+        });
+    }
 }
